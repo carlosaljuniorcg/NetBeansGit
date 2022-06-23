@@ -115,10 +115,8 @@ public class TelaSoma extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaSoma().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TelaSoma().setVisible(true);
         });
     }
 
