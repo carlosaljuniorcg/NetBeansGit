@@ -11,4 +11,5 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>br.com.meusestudos.tiposprimitivos.Tiposprimitivos</exec.mainClass>
     </properties>
+    <name>TiposPrimitivos</name>
 </project>

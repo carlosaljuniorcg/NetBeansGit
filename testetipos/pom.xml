@@ -11,4 +11,5 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>br.com.meusestudos.testetipos.Testetipos</exec.mainClass>
     </properties>
+    <name>TesteTipos</name>
 </project>
