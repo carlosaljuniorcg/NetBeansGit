@@ -108,7 +108,7 @@ public class TelaVoto extends javax.swing.JFrame {
         int idade = 2022 - ano;
         lblIdade.setText(Integer.toString(idade));
         String sit = (idade>=16 && idade<18) || (idade>70)?"É OPCIONAL":"NÃO É OPCIONAL";
-        lblSituacao.setText(sit);
+        lblSituacao.setText(sit); 
     }//GEN-LAST:event_btnCalcActionPerformed
 
     /**

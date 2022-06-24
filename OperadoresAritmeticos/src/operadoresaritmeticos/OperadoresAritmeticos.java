@@ -41,17 +41,17 @@ public class OperadoresAritmeticos {
         System.out.println(s);
         System.out.println(c);*/
         
-        /*float v = 8.9f;
+        float v = 8.9f;
         int af = (int) Math.floor(v);
         int ac = (int) Math.ceil(v);
         int ar = (int) Math.round(v);
         System.out.println(af);
         System.out.println(ac);
-        System.out.println(ar);*/
+        System.out.println(ar);
         
-        double ale = Math.random();
+        /*double ale = Math.random();
         int n = (int) (0 + ale * (100-0)); //randomizar números de 0 a 100
-        System.out.println(n);
+        System.out.println(n);*/
         
         
     }
