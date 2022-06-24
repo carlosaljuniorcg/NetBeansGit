@@ -43,7 +43,7 @@ public class TelaValores extends javax.swing.JFrame {
         jLabel2.setText("Denominador");
 
         btnDividir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnDividir.setText("Dividir");
+        btnDividir.setText("Calcular");
         btnDividir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDividirActionPerformed(evt);
@@ -52,7 +52,7 @@ public class TelaValores extends javax.swing.JFrame {
 
         Divisão.setText("Divisão");
 
-        Resto.setText("Resto");
+        Resto.setText("Raiz");
 
         lblDiv.setText("0");
 
@@ -123,7 +123,7 @@ public class TelaValores extends javax.swing.JFrame {
         int n = Integer.parseInt(txtNum.getText());
         int d = Integer.parseInt(txtDen.getText());
         float div = n / d;
-        float res = n % d;
+        float res = (float) Math.sqrt(n);
         lblDiv.setText(Float.toString(div));
         lblRes.setText(Float.toString(res));
         
