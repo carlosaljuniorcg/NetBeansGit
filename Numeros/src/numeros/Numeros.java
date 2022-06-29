@@ -21,10 +21,10 @@ public class Numeros {
         String resp;
         Scanner teclado = new Scanner(System.in);
         do {
-            System.out.println("Digite um número: ");
+            System.out.print("Digite um número: ");
             n = teclado.nextInt();
             s += n; //s = s + n;
-            System.out.println("Quer continuar? [S/N] ");
+            System.out.print("Quer continuar? [S/N] ");
             resp = teclado.next();
         } while (resp.equals("S"));
         System.out.println("A soma de todos os valores é " + s);
