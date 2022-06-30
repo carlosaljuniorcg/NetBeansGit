@@ -4,6 +4,7 @@
  */
 package Classes;
 
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 
 /**
@@ -22,8 +23,10 @@ public class TelaVetor extends javax.swing.JFrame {
      */
     public TelaVetor() {
         initComponents();
+        for(int c = 0; c < vetor.length; c++) {
+            lista.addElement(vetor[c]);
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,6 +62,11 @@ public class TelaVetor extends javax.swing.JFrame {
         });
 
         btnOrdem.setText("Ordenar");
+        btnOrdem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdemActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Vetor");
 
@@ -91,7 +99,7 @@ public class TelaVetor extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSelecionado)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,24 +118,31 @@ public class TelaVetor extends javax.swing.JFrame {
                         .addComponent(btnOrdem))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        // TODO add your handling code here:
-        vetor[selecionado] = Integer.parseInt(txtNum.getValue().toString());
+        // TODO add your handling code here
+        vetor[selecionado] = 0;
         lista.removeAllElements();
-        for( int c = 1; c < vetor.length; c++) {
+        for(int c = 0; c < vetor.length; c++) {
             lista.addElement(vetor[c]);
         }
+        
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        vetor[selecionado] = Integer.parseInt(txtNum.getValue().toString());
+        lista.removeAllElements();
+        for(int c = 0; c < vetor.length; c++) {
+            lista.addElement(vetor[c]);
+        }
+       
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void lstVetorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstVetorMouseClicked
@@ -136,6 +151,15 @@ public class TelaVetor extends javax.swing.JFrame {
         lblSelecionado.setText("[" + selecionado + "]");
         
     }//GEN-LAST:event_lstVetorMouseClicked
+
+    private void btnOrdemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdemActionPerformed
+        // TODO add your handling code here:
+        Arrays.sort(vetor);
+        lista.removeAllElements();
+        for(int c = 0; c < vetor.length; c++) {
+            lista.addElement(vetor[c]);
+        }
+    }//GEN-LAST:event_btnOrdemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,10 +189,8 @@ public class TelaVetor extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaVetor().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TelaVetor().setVisible(true);
         });
     }
 
@@ -182,4 +204,7 @@ public class TelaVetor extends javax.swing.JFrame {
     private javax.swing.JList<String> lstVetor;
     private javax.swing.JSpinner txtNum;
     // End of variables declaration//GEN-END:variables
+
+   
+      
 }
