@@ -8,10 +8,11 @@ public class Livro implements Publicacao {
     private Pessoa leitor;
 
     public String detalhes() {
-        return "Livro{" + "titulo=" + titulo + ", autor=" 
-                + autor + ", totPaginas=" + totPaginas + 
-                ", paginaAtual=" + paginaAtual + ", aberto=" 
-                + aberto + ", leitor=" + leitor + '}';
+        return "Livro{" + "titulo = " + titulo + ", autor = " 
+                + autor + ",\ntotPaginas = " + totPaginas + 
+                ", paginaAtual = " + paginaAtual + ", aberto = " 
+                + aberto + ", \nleitor = " + leitor.getNome() +
+                ", idade = " + leitor.getIdade() + ", sexo = " + leitor.getSexo() + "}";
     }
     
     
@@ -21,7 +22,7 @@ public class Livro implements Publicacao {
         this.autor = autor;
         this.totPaginas = totPaginas;
         this.aberto = false;
-        this.pagAtual = 0;
+        this.paginaAtual = 0;
         this.leitor = leitor;
     }
 
@@ -85,7 +86,12 @@ public class Livro implements Publicacao {
 
     @Override
     public void folhear(int p) {
-        this.paginaAtual = p;
+        if (p > this.totPaginas){
+            this.paginaAtual = 0;
+        }else {
+            this.paginaAtual = p;
+        }
+        
     }
 
     @Override
